@@ -18,7 +18,7 @@ const Register = () => {
     function onSubmit (data) {
         axios.post("https://kenziehub.herokuapp.com/users", data)
         .then((response)=>advance(response))
-        .catch((erro)=>toast.error(erro.response.data.message))
+        .catch((erro)=>toast.error("Email já exitente"))
     }
     return (
     <motion.div

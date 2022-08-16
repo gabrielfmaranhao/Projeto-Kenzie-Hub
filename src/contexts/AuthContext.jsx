@@ -48,7 +48,7 @@ const AuthProvider = ({children}) => {
     const newTechs = async(data)=> {
         await axios.post("https://kenziehub.herokuapp.com/users/techs", data)
         .then((response)=> setTechs([...techs,response.data] ,toast.success("Nova Tecnologia Criada")))
-        .catch((erro)=>toast.error(erro.response.data.message))
+        .catch((erro)=>toast.error("Tecnologia já exite,Você tem a opção de fazer o update dos statos"))
     }
     const updateTechs = async(data) => {
         await axios.put(`https://kenziehub.herokuapp.com/users/techs/${test.id}`,data)
