@@ -43,7 +43,7 @@ const AuthProvider = ({children}) => {
         localStorage.clear()
         await axios.post("https://kenziehub.herokuapp.com/sessions", data)
         .then((response)=> avancedLogin(response))
-        .catch((err)=>toast.error("Email ou senha Incorretos"));
+        .catch((err)=>toast.error("Email ou senha Invalidos"));
     }
     const newTechs = async(data)=> {
         await axios.post("https://kenziehub.herokuapp.com/users/techs", data)
