@@ -6,12 +6,12 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
 import { motion } from "framer-motion";
+import { RoutesContext } from "../../contexts/RoutesFunctions";
 
 
 const Login = () => { 
-    const {signIn} = useContext(AuthContext)
+    const {signIn} = useContext(RoutesContext);
     const history = useHistory()
     const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(formSchema)})
     return (

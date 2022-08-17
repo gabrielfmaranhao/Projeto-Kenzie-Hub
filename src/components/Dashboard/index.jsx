@@ -1,14 +1,16 @@
 import { ButtonModal, Container, DivContent, DivHeader, DivNavegation, Loading } from "./styles";
 import { useHistory } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
 import { ModalTech } from "../ModalTechs";
 import Modal from 'react-modal';
 import { DivModal } from "../ModalAddTechs";
 import { ModalEu } from "../Modal";
 import { motion } from "framer-motion";
+import { RoutesContext } from "../../contexts/RoutesFunctions";
+import { TechsContext } from "../../contexts/TechsFunctions";
 const Dashboard = () => {
-    const {user,techs, setTest} = useContext(AuthContext);
+    const {user,techs} = useContext(RoutesContext);
+    const {setRenderTech} = useContext(TechsContext);
     const history = useHistory();
     const [ modalIsOpen, setModalIsOpen] = useState(false);
     const [ modalTechOpen, setModalTechOpen] = useState(false);
@@ -24,7 +26,7 @@ const Dashboard = () => {
     }
     function openModalTech(card) {
         setModalTechOpen(true)
-        setTest(card)
+        setRenderTech(card)
     }
     function closeModalTech() {
         setModalTechOpen(false)

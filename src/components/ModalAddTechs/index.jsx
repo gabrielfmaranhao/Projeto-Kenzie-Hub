@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { ValidationTechs } from "../../validation/validationAddTechs";
 import {yupResolver} from "@hookform/resolvers/yup";
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
 import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
+import { TechsContext } from "../../contexts/TechsFunctions";
 
 export const DivModal = ({closeModal}) => {
-    const { newTechs} = useContext(AuthContext)
+    const { newTechs} = useContext(TechsContext)
     const {register, handleSubmit, formState: {errors}} = useForm({resolver:yupResolver(ValidationTechs)})
     return(
         <motion.div 

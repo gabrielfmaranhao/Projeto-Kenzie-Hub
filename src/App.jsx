@@ -1,15 +1,18 @@
 import Routes from './Routes';
-import AuthProvider from './contexts/AuthContext';
 import { Global } from './styles/global';
 import { AnimatePresence } from 'framer-motion';
+import { RoutesProvider } from './contexts/RoutesFunctions';
+import { TechsProvider } from './contexts/TechsFunctions';
 
 function App() {
   return (
     <AnimatePresence>
-      <AuthProvider>
-        <Global/>
-        <Routes/>
-      </AuthProvider>
+      <RoutesProvider>
+        <TechsProvider>
+            <Global/>
+            <Routes/>
+        </TechsProvider>
+      </RoutesProvider>
     </AnimatePresence>
   );
 }

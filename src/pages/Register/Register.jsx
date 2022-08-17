@@ -4,22 +4,15 @@ import { Container, DivNav, DivContainer, DivInfomation, Form } from "./styles";
 import { useForm } from "react-hook-form";
 import { Validations } from "../../validation/validationRegister";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import axios from "axios";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { RoutesContext } from "../../contexts/RoutesFunctions";
 const Register = () => {
     const history = useHistory();
     const {register, handleSubmit, formState: {errors}} = useForm({resolver:yupResolver(Validations)});
-    
-    function advance () {
-        toast.success("Conta criada com sucesso!")
-    }
-    function onSubmit (data) {
-        axios.post("https://kenziehub.herokuapp.com/users", data)
-        .then((response)=>advance(response))
-        .catch((erro)=>toast.error("Email já exitente"))
-    }
+    const { onSubmit } = useContext(RoutesContext)
     return (
     <motion.div
             initial    = {{ opacity: 0 }}
