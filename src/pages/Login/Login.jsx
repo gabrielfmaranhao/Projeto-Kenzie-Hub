@@ -1,6 +1,6 @@
 import { Container, DivForm, DivSpan, Form } from "./styles";
 import { useForm } from "react-hook-form";
-import { formSchema } from "../../validation/validationLogin";
+import { formSchema } from "../../utils/validation/validationLogin";
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useHistory } from "react-router-dom";
 import { ToastContainer} from "react-toastify";

@@ -1,6 +1,6 @@
 import { Container, DivForm } from "./styles";
 import { useForm } from "react-hook-form";
-import { ValidationTechs } from "../../validation/validationAddTechs";
+import { ValidationTechs } from "../../utils/validation/validationAddTechs";
 import {yupResolver} from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { ToastContainer} from "react-toastify";

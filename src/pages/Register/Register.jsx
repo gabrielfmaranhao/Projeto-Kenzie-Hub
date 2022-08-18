@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Container, DivNav, DivContainer, DivInfomation, Form } from "./styles";
 import { useForm } from "react-hook-form";
-import { Validations } from "../../validation/validationRegister";
+import { Validations } from "../../utils/validation/validationRegister";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
