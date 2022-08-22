@@ -1,12 +1,12 @@
 import { Container, DivForm } from "./styles";
 import { useForm } from "react-hook-form";
-import { ValidationTechs } from "../../utils/validation/validationAddTechs";
+import { ValidationTechs } from "../../../../utils/validation/validationAddTechs";
 import {yupResolver} from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
-import { TechsContext } from "../../contexts/TechsFunctions";
+import { TechsContext } from "../../../../contexts/TechsFunctions";
 
 export const DivModal = ({closeModal}) => {
     const { newTechs} = useContext(TechsContext)

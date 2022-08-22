@@ -6,8 +6,8 @@ import Modal from 'react-modal';
 import { DivModal } from "../ModalAddTechs";
 import { ModalEu } from "../Modal";
 import { motion } from "framer-motion";
-import { RoutesContext } from "../../contexts/RoutesFunctions";
-import { TechsContext } from "../../contexts/TechsFunctions";
+import { RoutesContext } from "../../../../contexts/RoutesFunctions";
+import  {TechsContext } from "../../../../contexts/TechsFunctions";
 const Dashboard = () => {
     const {user,techs} = useContext(RoutesContext);
     const {setRenderTech} = useContext(TechsContext);

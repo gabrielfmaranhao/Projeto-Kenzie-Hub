@@ -1,9 +1,8 @@
 import React from "react";
-import Dashboard from "../../components/Dashboard";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
-
 import { RoutesContext } from "../../contexts/RoutesFunctions";
+import Dashboard from "./components/Content";
 
 const  DashboardPage = () => {
     const {user, loading} = useContext(RoutesContext);

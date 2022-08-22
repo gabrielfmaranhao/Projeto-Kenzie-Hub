@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { ToastContainer } from "react-toastify"
 import { motion } from "framer-motion"
-import { TechsContext } from "../../contexts/TechsFunctions"
+import { TechsContext } from "../../../../contexts/TechsFunctions"
 export const ModalTech = ({closeModalTech}) => {
     const {updateTechs, deleteTechs, renderTech} = useContext(TechsContext);
     const {register, handleSubmit} = useForm();
