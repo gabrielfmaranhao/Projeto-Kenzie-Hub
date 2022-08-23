@@ -7,10 +7,12 @@ import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
 import { TechsContext } from "../../../../contexts/TechsFunctions";
+import { ITechs } from "../../../../contexts/RoutesFunctions";
 
-export const DivModal = ({closeModal}) => {
+type ITechsRegister = Omit<ITechs, "id">
+export const DivModal = ({closeModal}:any) => {
     const { newTechs} = useContext(TechsContext)
-    const {register, handleSubmit, formState: {errors}} = useForm({resolver:yupResolver(ValidationTechs)})
+    const {register, handleSubmit, formState: {errors}} = useForm<ITechsRegister>({resolver:yupResolver(ValidationTechs)})
     return(
         <motion.div 
         initial    = {{ opacity: 0 }}

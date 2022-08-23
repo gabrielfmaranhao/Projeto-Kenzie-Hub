@@ -9,9 +9,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { RoutesContext } from "../../contexts/RoutesFunctions";
+
+interface IRegisterUser {
+    name: string
+    password: string
+    email: string
+    course_module: string
+    bio: string
+    contact: string
+    confirmPassword: string
+}
 const Register = () => {
     const history = useHistory();
-    const {register, handleSubmit, formState: {errors}} = useForm({resolver:yupResolver(Validations)});
+    const {register, handleSubmit, formState: {errors}} = useForm<IRegisterUser>({resolver:yupResolver(Validations)});
     const { onSubmit } = useContext(RoutesContext)
     return (
     <motion.div

@@ -10,7 +10,11 @@ const  DashboardPage = () => {
     if (loading) {
         return <div>Carregando...</div>
     }
-    return  user ? <Dashboard/> : history.push("/") ; 
+    if (!user) {
+        history.push("/")
+        return <></>
+    }
+    return  <Dashboard/> ; 
 };
 
 export default DashboardPage

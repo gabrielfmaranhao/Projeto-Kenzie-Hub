@@ -7,13 +7,13 @@ import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import { useContext } from "react";
 import { motion } from "framer-motion";
-import { RoutesContext } from "../../contexts/RoutesFunctions";
+import { ILogin, RoutesContext } from "../../contexts/RoutesFunctions";
 
 
 const Login = () => { 
     const {signIn} = useContext(RoutesContext);
     const history = useHistory()
-    const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(formSchema)})
+    const {register, handleSubmit, formState: {errors}} = useForm<ILogin>({resolver: yupResolver(formSchema)})
     return (
         <motion.div 
             initial    = {{ opacity: 0 }}

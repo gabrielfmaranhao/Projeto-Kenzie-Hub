@@ -6,8 +6,10 @@ import Modal from 'react-modal';
 import { DivModal } from "../ModalAddTechs";
 import { ModalEu } from "../Modal";
 import { motion } from "framer-motion";
-import { RoutesContext } from "../../../../contexts/RoutesFunctions";
+import { ITechs, RoutesContext } from "../../../../contexts/RoutesFunctions";
 import  {TechsContext } from "../../../../contexts/TechsFunctions";
+
+
 const Dashboard = () => {
     const {user,techs} = useContext(RoutesContext);
     const {setRenderTech} = useContext(TechsContext);
@@ -24,7 +26,7 @@ const Dashboard = () => {
         localStorage.clear()
         history.push("/")
     }
-    function openModalTech(card) {
+    function openModalTech(card:ITechs) {
         setModalTechOpen(true)
         setRenderTech(card)
     }
@@ -79,7 +81,7 @@ const Dashboard = () => {
             </div>
             <DivContent>
                 <ul> 
-                    {techs?.map((card)=>
+                    {techs?.map((card:ITechs)=>
                         <li key={card.id}>
                             <ButtonModal key={card.id} onClick={()=>openModalTech(card)}>
                                 <h3>{card.title}</h3>

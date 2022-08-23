@@ -1,12 +1,16 @@
-import { DivForm,Container } from "../ModalTechs/styles"
+import { DivForm,Container } from "./styles"
 import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { ToastContainer } from "react-toastify"
 import { motion } from "framer-motion"
 import { TechsContext } from "../../../../contexts/TechsFunctions"
-export const ModalTech = ({closeModalTech}) => {
+
+interface ITechsUpdate {
+    status : string
+}
+export const ModalTech = ({closeModalTech}:any) => {
     const {updateTechs, deleteTechs, renderTech} = useContext(TechsContext);
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit} = useForm<ITechsUpdate>();
     return(
         <motion.div
         initial    = {{ opacity: 0 }}
@@ -22,7 +26,7 @@ export const ModalTech = ({closeModalTech}) => {
                 <DivForm>
                     <form onSubmit={handleSubmit(updateTechs)}>
                         <label htmlFor="name_techs">Nome</label>
-                        <input type={"text"} placeholder = {renderTech.title} id="name_techs"/>
+                        <input type={"text"} placeholder = {renderTech?.title} id="name_techs"/>
                         <label>Status</label>
                         <select {...register("status")}>
                             <option>Iniciante</option>
